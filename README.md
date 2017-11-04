@@ -2,6 +2,10 @@
 This repository comprises python utilities such as command line style stock profit calculator and real-time stock price fetcher.
 
 ## Stock Profit Calculator
+Run the program:
+
+    python ./command_utilities/cmdCalculator.py
+
 The calculator is a cmd-like program that will take the following inputs:
 
 - A stock symbol
@@ -20,10 +24,14 @@ then output the following items after computation:
 - Return on investment (in %)
 - Break even price (in dollars)
 
+![Input of Stock Profit Calculator](./screenshots/cmdCalculator_in.png)
+
+![Output of Stock Profit Calculator](./screenshots/cmdCalculator_out.png)
+
 ## Real-time Stock Price Fetcher
 Before June 2017, Most of the real-time stock price fetching tools depends on Yahoo Finance API, which has been abandoned by its owner in the middle of 2017. In order to get the real-time stock price, I analyzed Google Finance web pages and discovered a relatively stable and simple way to fetch all the necessary values from HTML meta data.
 
-Of course the page view may change in the future, though, I believe this program method will probably work fine as long as the Google keeps their meta tags. For example:
+Of course the page view may change in the future, though, I believe this program method will probably work fine as long as Google keeps their meta tags. For example:
 
     <meta content="Apple Inc." itemprop="name">
 	<meta content="https://www.google.com/finance?cid=22144" itemprop="url">
@@ -45,6 +53,10 @@ Of course the page view may change in the future, though, I believe this program
 	<meta content="USD" itemprop="priceCurrency">
 We can get values like price, priceChange, and priceChangePercent directly from the attributes in meta tags.
 
+Run the program:
+
+    python ./command_utilities/financialInfo.py
+
 This program will take a stock symbol as input and output the following:
 
 - Current date and time
@@ -62,6 +74,8 @@ A typical use case looks like:
 	Sat Nov  4 03:42:50 2017
 	Adobe Systems Incorporated (ADBE)
 	182.30 +1.36 (0.75)
+Screenshot:
+![Input and output of Real-time Stock Price Fetcher](./screenshots/financialInfo.png)
 
 -------------------------------------------------------------------------------
 Copyright (C) 2017 Mutian Wang, licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
