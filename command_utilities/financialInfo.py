@@ -32,7 +32,7 @@ def main():
                 page = urllib2.urlopen(url)
             except:
                 print("Error: Failed to load data")
-                exit()
+                continue
             soup = BeautifulSoup(page, "html.parser")
 
             # print info
@@ -46,7 +46,7 @@ def main():
                 print(getOutputFormat() % (time, companyName, tickerSymbol, price, priceChange, priceChangePercent))
             except:
                 print("Error: Invalid symbol (If you see this messge every time, then the data source format may have changed).")
-                exit()
+                continue
 
 # run program
 main()
