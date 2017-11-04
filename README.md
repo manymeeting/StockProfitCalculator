@@ -24,6 +24,8 @@ then output the following items after computation:
 - Return on investment (in %)
 - Break even price (in dollars)
 
+Screenshot of input and output:
+
 ![Input of Stock Profit Calculator](./screenshots/cmdCalculator_in.png)
 
 ![Output of Stock Profit Calculator](./screenshots/cmdCalculator_out.png)
@@ -74,7 +76,9 @@ A typical use case looks like:
 	Sat Nov  4 03:42:50 2017
 	Adobe Systems Incorporated (ADBE)
 	182.30 +1.36 (0.75)
-Screenshot:
+	
+Screenshot of input and output:
+
 ![Input and output of Real-time Stock Price Fetcher](./screenshots/financialInfo.png)
 
 -------------------------------------------------------------------------------
