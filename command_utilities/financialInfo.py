@@ -28,17 +28,25 @@ def main():
         else:
             # specify the url
             url = buildURL(symbol)
-            page = urllib2.urlopen(url)
+            try:
+                page = urllib2.urlopen(url)
+            except:
+                print("Error: Failed to load data")
+                exit()
             soup = BeautifulSoup(page, "html.parser")
 
             # print info
-            time = strftime("%a %b %d %H:%M:%S %z %y", gmtime()) # Mon Oct 10 17:23:48 PDT 2016
-            tickerSymbol = extractInfo(soup, "tickerSymbol")
-            companyName = extractInfo(soup, "name")
-            price = extractInfo(soup, "price")
-            priceChange = extractInfo(soup, "priceChange")
-            priceChangePercent = extractInfo(soup, "priceChangePercent")
-            print(getOutputFormat() % (time, companyName, tickerSymbol, price, priceChange, priceChangePercent))
+            try:
+                time = strftime("%a %b %d %H:%M:%S %z %y", gmtime()) # Mon Oct 10 17:23:48 PDT 2016
+                tickerSymbol = extractInfo(soup, "tickerSymbol")
+                companyName = extractInfo(soup, "name")
+                price = extractInfo(soup, "price")
+                priceChange = extractInfo(soup, "priceChange")
+                priceChangePercent = extractInfo(soup, "priceChangePercent")
+                print(getOutputFormat() % (time, companyName, tickerSymbol, price, priceChange, priceChangePercent))
+            except:
+                print("Error: Invalid symbol (If you see this messge every time, then the data source format may have changed).")
+                exit()
 
 # run program
 main()
