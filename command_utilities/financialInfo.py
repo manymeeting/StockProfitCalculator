@@ -37,7 +37,7 @@ def main():
 
             # print info
             try:
-                time = strftime("%a %b %d %H:%M:%S %z %y", gmtime()) # Mon Oct 10 17:23:48 PDT 2016
+                time = strftime("%c", gmtime()) # Sat Nov  4 03:42:50 2017
                 tickerSymbol = extractInfo(soup, "tickerSymbol")
                 companyName = extractInfo(soup, "name")
                 price = extractInfo(soup, "price")
